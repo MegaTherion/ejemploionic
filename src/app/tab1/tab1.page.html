@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Juegos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,32 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Juegos</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Juegos de alasita</ion-card-subtitle>
+      <ion-card-title>Mayor Menor</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      
+      <!-- Number type input -->
+      <ion-input type="number" value="0"></ion-input>
+      
+      <!-- Number type input -->
+      <ion-input type="number" value="0"></ion-input>
+
+      <ion-button color="primary" expand="block" fill="outline">Jugar</ion-button>
+
+      <div *ngIf="suma > 0" class="resultadodados">
+        {{ suma }}
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+  
+
 </ion-content>
