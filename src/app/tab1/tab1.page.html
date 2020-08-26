@@ -21,17 +21,51 @@
   
     <ion-card-content>
       
-      <!-- Number type input -->
-      <ion-input type="number" value="0"></ion-input>
+      <div>
+        Elige:
+        <ion-button color="secondary" [disabled]="eleccion !== ''" (click)="elegirOpcion('menor')">Menor</ion-button>
+        <ion-button color="secondary" [disabled]="eleccion !== ''" (click)="elegirOpcion('casa')">Casa</ion-button>
+        <ion-button color="secondary" [disabled]="eleccion !== ''" (click)="elegirOpcion('mayor')">Mayor</ion-button>
+      </div>
       
-      <!-- Number type input -->
-      <ion-input type="number" value="0"></ion-input>
+      <!-- <div *ngIf="eleccion.length > 0">
+        Elegiste {{ eleccion }}
+      </div> -->
+      
+      <ion-item>
+        <ion-label>Dado 1</ion-label>
+        <ion-input [(ngModel)]="dado1" type="number" value="0"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Dado 2</ion-label>
+        <ion-input [(ngModel)]="dado2" type="number" value="0"></ion-input>
+      </ion-item>
 
-      <ion-button color="primary" expand="block" fill="outline">Jugar</ion-button>
+      <ion-button color="primary" (click)="calcularSuma()" expand="block" fill="outline">Jugar</ion-button>
 
       <div *ngIf="suma > 0" class="resultadodados">
         {{ suma }}
       </div>
+      
+      <div *ngIf="suma >= 2 && suma <= 6" class="resultadotexto">
+        Ganó Menor
+      </div>
+      <div *ngIf="suma > 7" class="resultadotexto">
+        Ganó Mayor
+      </div>
+      <div *ngIf="suma == 7" class="resultadotexto">
+        Ganó casa
+      </div>
+
+      <div class="ganar" *ngIf="resultado.length > 0 && resultado === eleccion">
+        Ganaste! :)
+      </div>
+
+      <div class="perder" *ngIf="resultado.length > 0 && resultado !== eleccion">
+        Perdiste! :(
+      </div>
+
     </ion-card-content>
   </ion-card>
   
