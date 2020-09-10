@@ -1,0 +1,21 @@
+h2 {
+    font-size: 2em;
+    color: #266f99;
+}
+ul {
+    transform: rotate(180deg);
+    margin: auto;
+}
+ul > li {
+    transform: rotate(-180deg);
+}
+li {
+    margin: auto;
+    font-size: 1.5em;
+    color: white;
+    background-color: #266f99;
+    width: 150px;
+    height: 40px;
+    padding-left: 15px;
+    margin-top: 5px;
+}

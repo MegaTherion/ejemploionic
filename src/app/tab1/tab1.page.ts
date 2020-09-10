@@ -11,7 +11,7 @@ export class Tab1Page {
   dado2 = 0;
   suma = 0;
   eleccion = '';
-  resultado: string;
+  resultado = '';
 
   constructor() {}
 
